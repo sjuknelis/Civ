@@ -1,0 +1,56 @@
+main: com.simas.civ.App
+name: Civ
+version: 0.1
+api-version: 1.19
+description: Plugin for civilization-type experiments
+author: sj
+commands:
+  revive:
+    description: Revives a specified player and allows them to rejoin the server.
+    permission: civ.revive
+    usage: "Usage: /revive <player>"
+  broadcast:
+    description: Broadcasts a message to all players and bypasses the chat radius restriction.
+    permission: civ.broadcast
+    usage: "Usage: /broadcast <message>"
+  islandcounts:
+    description: Reports the number of survivors that are members of each island.
+    permission: civ.islandcounts
+    usage: "Usage: /islandcounts"
+  securestate:
+    description: Sets the security level of the server (normal = all whitelisted players can join, spectator = whitelisted players can join as spectators, closed = only staff can join).
+    permission: civ.securestate
+    usage: "Usage: /securestate [normal|spectator|closed]"
+  civreload:
+    description: Reloads config.yml.
+    permission: civ.reload
+    usage: "Usage: /civreload"
+permissions:
+  civ.staff:
+    description: Protects user from restrictions imposed on game players
+    default: op
+  civ.revive:
+    description: Allows /revive
+    default: op
+  civ.broadcast:
+    description: Allows /broadcast
+    default: op
+  civ.islandcounts:
+    description: Allows /islandcounts
+    default: op
+  civ.securestate:
+    description: Allows /securestate
+    default: op
+  civ.reload:
+    description: Allows /civreload
+    default: op
+  civ.admin:
+    description: Allows all commands + staff privileges
+    default: op
+    children:
+      civ.staff: true
+      civ.revive: true
+      civ.broadcast: true
+      civ.islandcounts: true
+      civ.securestate: true
+      civ.reload: true

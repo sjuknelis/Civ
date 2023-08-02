@@ -1,0 +1,37 @@
+island-colors:
+  - AQUA
+  - RED
+  - GREEN
+  - YELLOW
+island-names:
+  - Snow
+  - Plains
+  - Jungle
+  - Desert
+island-guard-enabled: true
+island-origin: 750
+island-size: 500
+island-spawn-size: 10
+island-spawn-y: 64
+chat-radius: 100
+banned-items:
+  - TNT
+  - TNT_MINECART
+  - ENDER_PEARL
+limited-enchants:
+  - protection
+  - fire_protection
+  - blast_protection
+  - projectile_protection
+  - sharpness
+  - smite
+  - bane_of_arthropods
+  - knockback
+  - power
+  - punch
+banned-enchants:
+  - riptide
+  - channeling
+spawn-invincibility-seconds: 20
+open-motd: open
+closed-motd: closed
