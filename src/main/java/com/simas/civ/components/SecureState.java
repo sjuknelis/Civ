@@ -36,6 +36,12 @@ public class SecureState implements PluginComponent {
     }
 
     public void onEnable() {
+        try {
+            state = State.valueOf(MultiLib.getDataStorage().get("securestate", "NORMAL").get());
+        } catch ( InterruptedException | ExecutionException e ) {
+            e.printStackTrace();
+        }
+
         plugin.addListener(new Listener() {
             @EventHandler
             public void onAsyncPlayerPreLogin(AsyncPlayerPreLoginEvent event) {
@@ -91,6 +97,7 @@ public class SecureState implements PluginComponent {
                     sender.sendMessage(ChatColor.RED + "Usage: /securestate [normal|spectator|closed]");
                     return true;
                 }
+                MultiLib.getDataStorage().set("securestate", state.name());
                 MultiLib.notify("civ:setsecurestate", state.name());
 
                 String kickMessage;
